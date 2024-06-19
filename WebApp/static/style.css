@@ -1,0 +1,139 @@
+/* Eliminar flechas en campos numéricos */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*input[type=number] {
+    -moz-appearance: textfield;
+}*/
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: whitesmoke; /* Cambia el color del título */
+    margin-top: 0px;
+    font-size: 36px; /* Aumenta el tamaño de la fuente */
+    background-color: #02253d;
+    padding-top: 10px;
+    padding-bottom: 10px; /* Aumenta el espacio entre el texto y el borde inferior */
+    text-shadow: 2px 2px 4px rgba(167, 162, 162, 0.1); /* Agrega un sombreado suave */
+}
+
+form {
+    max-width: 1100px; /* Aumenta el ancho máximo del formulario */
+    margin: 20px auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Reducción del relleno */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Añade un fondo blanco */
+}
+
+.section {
+    margin-bottom: 20px; /* Reducción del espacio entre secciones */
+    padding: 15px; /* Reducción del relleno */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9ef; /* Color de fondo ligeramente más claro */
+}
+
+.section-title {
+    background-color: #02253d;
+    color: white;
+    padding: 8px 16px; /* Reducción del relleno */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 18px; /* Reducción del tamaño de la fuente */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ajusta el ancho de las columnas automáticamente */
+    grid-gap: 30px; /* Reducción del espacio entre elementos */
+}
+
+.grid-item {
+    margin-bottom: 10px; /* Reducción del espacio entre elementos */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px; /* Reducción del espacio entre etiquetas */
+    color: #333;
+    font-size: 14px; /* Reducción del tamaño de la fuente */
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%; /* Ajusta el ancho al 100% */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 14px; /* Reducción del tamaño de la fuente */
+}
+
+.submit-button {
+    background: #02253d; /* Fondo degradado */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.submit-button:hover {
+    background: #00509e; /* Fondo degradado invertido al pasar el cursor */
+    transform: scale(1.05); /* Efecto de escala */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    background-color: #02253d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 0;
+    font-size: 20px; /* Reducción del tamaño de la fuente */
+}
+
+.submit-button-container {
+    text-align: center;
+}
+
+.price-heading {
+    max-width: 1200px;
+    text-align: center;
+    margin: 20px auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Reducción del relleno */
+    color: #02253d; /* Cambia el color del precio sugerido */
+    font-size: 20px; /* Reducción del tamaño de la fuente */
+    margin-top: 20px; /* Reducción del espacio superior */
+    text-transform: uppercase; /* Cambia el texto a mayúsculas */
+    background-color: #f9f9f9ef;
+    padding-bottom: 5px;
+}
+
+h3 {
+    text-align: center;
+    color: whitesmoke;
+    background-color: #02253d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 0;
+    font-size: 20px; /* Reducción del tamaño de la fuente */
+}

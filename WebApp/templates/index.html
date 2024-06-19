@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Propiedades</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@yaireo/tagify/dist/tagify.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+<body>
+    <h1>Ingresa los datos del inmueble</h1>
+    <form method="post" id="formulario">
+        <div class="section">
+            <h2>Distribución</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <label for="tipo">Tipo Inmueble:</label>
+                    <select id="tipo" name="tipo" required title="Selecciona el tipo de inmueble que desea vender">
+                        <option value="">Selecciona una opción</option>
+                        {% for tipo in tipos %}
+                        <option value="{{ tipo }}">{{ tipo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="area">Área:</label>
+                    <input type="number" step="any" id="area" name="area" required title="Ingresa el tamaño del apartamento en metros cuadrados">
+                </div>
+                <div class="grid-item">
+                    <label for="estado">Estado:</label>
+                    <select id="estado" name="estado" required title="Selecciona el estado del inmueble">
+                        <option value="">Selecciona una opción</option>
+                        {% for estado in estados %}
+                        <option value="{{ estado }}">{{ estado }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="piso">Piso:</label>
+                    <input type="number" step="any" id="piso" name="piso" required title="Ingresa el número de piso en el que queda ubicado el inmueble">
+                </div>
+
+                <div class="grid-item">
+                    <label for="habitaciones">Habitaciones:</label>
+                    <input type="number" step="any" id="habitaciones" name="habitaciones" required title="Ingresa la cantidad de habitaciones del inmueble">
+                </div>
+                <div class="grid-item">
+                    <label for="banos">Baños:</label>
+                    <input type="number" step="any" id="banos" name="banos" required title="Ingresa la cantidad de baños del inmueble">
+                </div>
+                <div class="grid-item">
+                    <label for="pisos_interiores">Pisos Interiores:</label>
+                    <input type="number" id="pisos_interiores" name="pisos_interiores" required title="Ingresa la cantidad de pisos del inmueble">
+                </div>
+
+                <div class="grid-item">
+                    <label for="balcon">Balcón:</label>
+                    <select id="balcon" name="balcon" required title="¿El inmueble cuenta con balcón?">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Ubicación</h2>
+            <div class="grid-container">
+
+                <div class="grid-item">
+                    <label for="departamento">Departamento:</label>
+                    <select id="departamento" name="departamento" required title="Selecciona el departamento donde queda ubicado el inmueble">
+                        <option value="">Selecciona una opción</option>
+                        {% for departamento in departamentos %}
+                        <option value="{{ departamento }}">{{ departamento }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="ciudad">Ciudad:</label>
+                    <select id="ciudad" name="ciudad" required title="Selecciona la ciudad donde queda ubicado el inmueble">
+                        <option value="">Selecciona una opción</option>
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="estrato">Estrato:</label>
+                    <select id="estrato" name="estrato" required title="Selecciona el estrato al que pertenece el inmueble">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Generalidades</h2>
+            <div class="grid-container">
+                
+                <div class="grid-item">
+                    <label for="tipo_conjunto">Tipo de Conjunto:</label>
+                    <select id="tipo_conjunto" name="tipo_conjunto" required title="Selecciona el tipo de conjunto que aplique">
+                        <option value="">Selecciona una opción</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Conjunto">Conjunto</option>
+                        <option value="Edificio">Edificio</option>
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="administracion">Administración:</label>
+                    <input type="number" id="administracion" name="administracion" required title="Ingresa el valor que pagas por administración">
+                </div>
+                <div class="grid-item">
+                    <label for="antiguedad">Antigüedad:</label>
+                    <input type="number" id="antiguedad" name="antiguedad" required title="Ingresa los años de antigüedad del inmueble">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Servicios Adicionales</h2>
+            <div class="grid-container">
+
+                <div class="grid-item">
+                    <label for="parqueaderos">Parqueaderos:</label>
+                    <input type="number" step="any" id="parqueaderos" name="parqueaderos" required title="Ingresa la cantidad de parqueaderos que tiene el inmueble, en caso de no tener ingresa 0">
+                </div>
+                <div class="grid-item">
+                    <label for="ascensor">Ascensor:</label>
+                    <select id="ascensor" name="ascensor" required title="¿El inmueble cuenta con ascensor en sus instalaciones?">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="cuarto_util">Cuarto Útil:</label>
+                    <select id="cuarto_util" name="cuarto_util" required title="¿El inmueble cuenta con cuarto útil o deposito?">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label for="inmobiliaria">Inmobiliaria:</label>
+                    <select id="inmobiliaria" name="inmobiliaria" required title="¿El inmueble va a ser vendido por inmobiliaria?">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="submit-button-container">
+            <input type="submit" value="Enviar" class="submit-button">
+            <button type="button" onclick="limpiarFormulario()" class="submit-button">Nueva Consulta</button>
+        </div>
+        
+
+        <div class="section">
+            <h3>Rango de Precio Sugerido</h3>
+            {% if precio is not none %}
+                <h2 class="price-heading">{{ precio }}</h2>
+            {% endif %}
+        </div>
+    </form>
+    
+    <script>
+        $(document).ready(function() {
+            $('#departamento').change(function() {
+                var departamento = $(this).val();
+                $.ajax({
+                    url: "{{ url_for('municipios') }}",
+                    type: "POST",
+                    data: {departamento: departamento},
+                    success: function(response) {
+                        var $ciudad = $('#ciudad');
+                        $ciudad.empty();
+                        $ciudad.append('<option value="">Selecciona una opción</option>');
+                        $.each(response, function(index, value) {
+                            $ciudad.append('<option value="' + value + '">' + value + '</option>');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Inicializar tooltips
+        tippy('[title]', {
+            content: reference => reference.getAttribute('title'),
+        });
+    </script>
+
+    <script>
+        //Limpiar Campos para Nueva Consulta
+        function limpiarFormulario() {
+            document.getElementById("formulario").reset();
+        }
+    </script>
+
+
+
+</body>
+</html>
